@@ -13,11 +13,66 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha13.622-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 	<script = "leaflet.ajax.min.js"></script>
 	
+	<style>#map { width: 800px; height: 500px; }
+/*Setup*/
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+html,
+body,
+#mapid {
+  height: 100%;
+  width: 100%;
+}
+
+/*Legend specific*/
+.legend {
+  padding: 6px 8px;
+  font: 14px Arial, Helvetica, sans-serif;
+  background: white;
+  background: rgba(255, 255, 255, 0.8);
+  /*box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);*/
+  /*border-radius: 5px;*/
+  line-height: 24px;
+  color: #555;
+}
+.legend h4 {
+  text-align: center;
+  font-size: 16px;
+  margin: 2px 12px 8px;
+  color: #777;
+}
+
+.legend span {
+  position: relative;
+  bottom: 3px;
+}
+
+.legend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin: 0 8px 0 0;
+  opacity: 0.7;
+}
+
+.legend i.icon {
+  background-size: 18px;
+  background-color: rgba(255, 255, 255, 1);
+}</style>
+	
+	
 </head>
 <body>
 
 
 <div id="mapid" style="width: 800px; height: 500px;"></div>
+<div id="mapid"></div>
+	<!--http://leafletjs.com/examples/choropleth/-->
+
+
 <script>
 
 	var mymap = L.map('mapid').setView([13.6218, 123.1948], 14);
@@ -31,132 +86,135 @@
 	}).addTo(mymap);
 	
 		L.marker([13.624222, 123.185551]).addTo(mymap)
-		.bindPopup("<b>Hello!</b><br />Welcome to Naga City.").openPopup();
+		.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
 
 	L.circle([13.623466, 123.184591], 35, {
-		color: 'red',
-		fillColor: '#f03',
+		color: 'orange',
+		fillColor: '#FF8C00',
 		fillOpacity: 0.5
-	}).addTo(mymap).bindPopup("Traffic Congested Area!");   
-
+	}).addTo(mymap).bindPopup("General Luna St. (Pure Gold). [8-15kph]");
 
 	L.circle([13.621726, 123.184215], 35, {
-		color: 'red',
-		fillColor: '#f03',
+		color: 'orange',
+		fillColor: '#FF8C00',
 		fillOpacity: 0.5
-	}).addTo(mymap).bindPopup("Traffic Congested Area!");   
+	}).addTo(mymap).bindPopup("General Luna St. [8-15kph]");   
 
 	L.circle([13.625323, 123.186154], 35, {
-		color: 'red',
-		fillColor: '#f03',
+		color: 'orange',
+		fillColor: '#FF8C00',
 		fillOpacity: 0.5
-	}).addTo(mymap).bindPopup("Traffic Congested Area!");   
+	}).addTo(mymap).bindPopup("Elias Angeles St. [8-15kph]");   
 
 	L.circle([13.623055, 123.186793], 35, {
-		color: 'red',
-		fillColor: '#f03',
+		color: 'orange',
+		fillColor: '#FF8C00',
 		fillOpacity: 0.5
-	}).addTo(mymap).bindPopup("Traffic Congested Area!");   
+	}).addTo(mymap).bindPopup("Panganibann Dr. [8-15kph]");   
 
 		L.circle([13.622802, 123.188565], 35, {
-		color: 'red',
-		fillColor: '#f03',
+		color: 'orange',
+		fillColor: '#FF8C00',
 		fillOpacity: 0.5
-	}).addTo(mymap).bindPopup("Traffic Congested Area!");   
+	}).addTo(mymap).bindPopup("Panganiban Dr. [8-15kph]");   
 
 		L.circle([13.622273, 123.189667], 35, {
-		color: 'red',
-		fillColor: '#f03',
+		color: 'green',
+		fillColor: '#00FF00',
 		fillOpacity: 0.5
-	}).addTo(mymap).bindPopup("Traffic Congested Area!"); 
+	}).addTo(mymap).bindPopup("Ninoy and Cory Ave. [22kph]"); 
 
-		L.circle([13.627766, 123.188040], 35, {
-		color: 'red',
-		fillColor: '#f03',
+	L.circle([13.627766, 123.188040], 35, {
+		color: 'yellow',
+		fillColor: '#FBEC5D',
 		fillOpacity: 0.5
-	}).addTo(mymap).bindPopup("Traffic Congested Area!"); 
+	}).addTo(mymap).bindPopup("Santonja St. (USI)[15kph]"); 
 
 		L.circle([13.633796, 123.191813], 35, {
-		color: 'red',
-		fillColor: '#f03',
+		color: 'orange',
+		fillColor: '#FF8C00',
 		fillOpacity: 0.5
-	}).addTo(mymap).bindPopup("Traffic Congested Area!"); 
+	}).addTo(mymap).bindPopup("Magsaysay Extension [8-15kph]"); 
 
 		L.circle([13.632425, 123.195673], 35, {
-		color: 'red',
-		fillColor: '#f03',
+		color: 'orange',
+		fillColor: '#FF8C00',
 		fillOpacity: 0.5
-	}).addTo(mymap).bindPopup("Traffic Congested Area!"); 
+	}).addTo(mymap).bindPopup("Magsaysay Avenue. [8-15kph]"); 
 
 		L.circle([13.632257, 123.193464], 35, {
-		color: 'red',
-		fillColor: '#f03',
+		color: 'orange',
+		fillColor: '#FF8C00',
 		fillOpacity: 0.5
-	}).addTo(mymap).bindPopup("Traffic Congested Area!");
+	}).addTo(mymap).bindPopup("Penafrancia Avenue [8-15kph");
 
-		L.circle([13.633767, 123.1955230], 35, {
-		color: 'red',
-		fillColor: '#f03',
+		L.circle([13.633767, 123.195230], 35, {
+		color: 'orange',
+		fillColor: '#FF8C00',
 		fillOpacity: 0.5
-	}).addTo(mymap).bindPopup("Traffic Congested Area!"); 
+	}).addTo(mymap).bindPopup("Penafrancia Avenue [8-15kph]"); 
 
 		L.circle([13.622370, 123.191759], 35, {
-		color: 'red',
-		fillColor: '#f03',
+		color: 'orange',
+		fillColor: '#FF8C00',
 		fillOpacity: 0.5
-	}).addTo(mymap).bindPopup("Traffic Congested Area!"); 
+	}).addTo(mymap).bindPopup("Panganiban Dr. [8-15kph"); 
 
 		L.circle([13.625678, 123.187250], 35, {
-		color: 'red',
-		fillColor: '#f03',
+		color: 'orange',
+		fillColor: '#FF8C00',
 		fillOpacity: 0.5
-	}).addTo(mymap).bindPopup("Traffic Congested Area!"); 
+	}).addTo(mymap).bindPopup("Penafrancia St. [8-15kph]"); 
 
 		L.circle([13.627181, 123.189104], 35, {
-		color: 'red',
-		fillColor: '#f03',
+		color: 'yellow',
+		fillColor: '#FBEC5D',
 		fillOpacity: 0.5
-	}).addTo(mymap).bindPopup("Traffic Congested Area!"); 
+	}).addTo(mymap).bindPopup("Colgante [15kph]"); 
 
 		L.circle([13.625892, 123.185485], 35, {
-		color: 'red',
-		fillColor: '#f03',
+		color: 'green',
+		fillColor: '#00FF00',
 		fillOpacity: 0.5
-	}).addTo(mymap).bindPopup("Traffic Congested Area!"); 
+	}).addTo(mymap).bindPopup("Barlin [22kph]"); 
 
 		L.circle([13.624552, 123.185761], 35, {
-		color: 'red',
-		fillColor: '#f03',
+		color: 'orange',
+		fillColor: '#FF8C00',
 		fillOpacity: 0.5
-	}).addTo(mymap).bindPopup("Traffic Congested Area!"); 
+	}).addTo(mymap).bindPopup("Elias Angeles St. (Quince Martires) [8-15kph]"); 
 
 		L.circle([13.626508, 123.189616], 35, {
 		color: 'red',
 		fillColor: '#f03',
 		fillOpacity: 0.5
-	}).addTo(mymap).bindPopup("Traffic Congested Area!"); 
+	}).addTo(mymap).bindPopup("Blumentritt [8kph]"); 
 
 		L.circle([13.625897, 123.200971], 35, {
-		color: 'red',
-		fillColor: '#f03',
+		color: 'orange',
+		fillColor: '#FF8C00',
 		fillOpacity: 0.5
-	}).addTo(mymap).bindPopup("Traffic Congested Area!"); 
+	}).addTo(mymap).bindPopup("Magsaysay Avenue [8-15kph]"); 
 
 		L.circle([13.631304, 123.187862], 35, {
-		color: 'red',
-		fillColor: '#f03',
+		color: 'orange',
+		fillColor: '#FF8C00',
 		fillOpacity: 0.5
-	}).addTo(mymap).bindPopup("Traffic Congested Area!");
+	}).addTo(mymap).bindPopup("Bagumbayan Sur [8-15kph]");
 
 		L.circle([13.634836, 123.187111], 35, {
-		color: 'red',
-		fillColor: '#f03',
+		color: 'orange',
+		fillColor: '#FF8C00',
 		fillOpacity: 0.5
-	}).addTo(mymap).bindPopup("Traffic Congested Area!");
+	}).addTo(mymap).bindPopup("Bagumbayan Norte [8-15kph]");
 
 
-	
 
+	L.polygon([
+		[13.613935, 123.196135],
+		[13.612434, 123.198001],
+		[13.612538, 123.195276]
+	]).addTo(mymap).bindPopup("I am a polygon.");
 
 	var popup = L.popup();
 
@@ -179,14 +237,13 @@
 
 	L.marker([13.623257, 123.184537], {icon: blackIcon}).addTo(mymap);
 
-	
 //image overlay
 	var lyrPopulation;
 	var lyrZoning;
 	var lyrZoning;
 	var lyrTraffic;
 	
-	lyrPopulation = L.imageOverlay('POP.png',[[13.605389595, 123.176498413], [13.681201935, 123.375648499]],{opacity:0.7}).addTo(mymap);
+	lyrPopulation = L.imageOverlay('POP.png',[[13.605389595, 123.176498413], [13.681201935, 123.375648499]],{opacity:0.3}).addTo(mymap);
 	lyrZoning = L.imageOverlay('ZON.png',[[13.605389595, 123.176498413], [13.681201935, 123.375648499]],{opacity:1}).addTo(mymap);
 	
 	objOverlays = {
@@ -197,9 +254,31 @@
 	ctlLayers = L.control.layers(objOverlays).addTo(mymap);
 
 
+//LEGEND
+
+/*Setup*/
+
+/*Legend specific*/
+	var legend = L.control({ position: "bottomleft" });
+
+	legend.onAdd = function(map) {
+	var div = L.DomUtil.create("div", "legend");
+		div.innerHTML += "<h4>LEGEND</h4>";
+		div.innerHTML += '<i style="background: #33a02c"></i><span>Agricultural</span><br>';
+		div.innerHTML += '<i style="background: #f6f31c"></i><span>Residential</span><br>';
+		div.innerHTML += '<i style="background: #e31a1c"></i><span>Commercial</span><br>';
+		div.innerHTML += '<i style="background: #a2639e"></i><span>Industrial</span><br>';
+		div.innerHTML += '<i style="background: #0000ff"></i><span>Intitutional</span><br>';
+		div.innerHTML += '<i style="background: #15ee82"></i><span>cemetery</span><br>';
+		div.innerHTML += '<i style="background: #13460f"></i><span>Forest</span><br>';	
+  
+
+	return div;
+	};
+
+	legend.addTo(mymap);
+
 </script>
-
-
 
 </body>
 </html>
