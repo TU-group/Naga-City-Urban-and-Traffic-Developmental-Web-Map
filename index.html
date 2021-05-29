@@ -205,7 +205,8 @@ body,
 		fillColor: '#FF8C00',
 		fillOpacity: 0.5
 	}).addTo(mymap).bindPopup("Bagumbayan Norte [8-15kph]");
-
+	
+	
 
 
 	var popup = L.popup();
@@ -217,7 +218,7 @@ body,
 			.openOn(mymap);
 	}
 
-	
+	mymap.on('click', onMapClick);
 
 //image overlay
 	var lyrPopulation;
